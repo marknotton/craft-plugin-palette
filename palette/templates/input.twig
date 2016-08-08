@@ -1,0 +1,13 @@
+{% import "_includes/forms" as forms %}
+<div class="vibrant">
+  {{ forms.hidden({ name:name~'[colour1]', value:colour1}) }}
+  {{ forms.hidden({ name:name~'[colour2]', value:colour2}) }}
+  {{ forms.hidden({ name:name~'[colour3]', value:colour3}) }}
+  {{ forms.hidden({ name:name~'[colour4]', value:colour4}) }}
+  {{ forms.hidden({ name:name~'[colour5]', value:colour5}) }}
+  <div class="pallete"></div>
+  {% set js %}
+    vibrant.init({{ settings.limit | raw }})
+  {% endset %}
+  {% includeJs js %}
+</div>
