@@ -5,9 +5,17 @@ class PalettePlugin extends BasePlugin {
   public function getName() {
     return Craft::t('Palette');
   }
-
+  
   public function getVersion() {
-    return '1.0';
+    return '0.1';
+  }
+
+  public function getSchemaVersion() {
+    return '0.1';
+  }
+
+  public function getDescription() {
+    return 'Retrieve a colour pallete from an image and arrange the colours in order of priority.';
   }
 
   public function getDeveloper() {
