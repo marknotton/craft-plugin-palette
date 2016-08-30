@@ -2,10 +2,11 @@
 namespace Craft;
 
 class PalettePlugin extends BasePlugin {
+  
   public function getName() {
     return Craft::t('Palette');
   }
-  
+
   public function getVersion() {
     return '0.1';
   }
