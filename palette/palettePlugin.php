@@ -2,7 +2,7 @@
 namespace Craft;
 
 class PalettePlugin extends BasePlugin {
-  
+
   public function getName() {
     return Craft::t('Palette');
   }
@@ -35,6 +35,13 @@ class PalettePlugin extends BasePlugin {
     return 'https://raw.githubusercontent.com/marknotton/craft-plugin-palette/master/palette/releases.json';
   }
 
+  public function addTwigExtension() {
+    Craft::import('plugins.palette.twigextensions.palette_globals');
+    return array(
+      new palette_globals()
+    );
+  }
+
   public function init() {
     if ( craft()->request->isCpRequest())  {
       if( craft()->userSession->isLoggedIn() ) {
@@ -42,12 +49,7 @@ class PalettePlugin extends BasePlugin {
         craft()->templates->includeCssResource("palette/palette.css");
         craft()->templates->includeJsResource('palette/vibrant.js');
         craft()->templates->includeJsResource('palette/palette.js');
-       }
-    } else {
-      // Front end, create a collection of global variables
-      craft()->urlManager->setRouteVariables(
-        array('palette' => craft()->palette)
-      );
+      }
     }
   }
 }
