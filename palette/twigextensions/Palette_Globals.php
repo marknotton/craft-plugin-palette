@@ -3,7 +3,7 @@ namespace Craft;
 
 use Twig_Extension;
 
-class palette_globals extends \Twig_Extension {
+class Palette_Globals extends \Twig_Extension {
 
   public function getName() {
     return Craft::t('Palette Globals');

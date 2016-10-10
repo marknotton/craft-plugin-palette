@@ -36,9 +36,9 @@ class PalettePlugin extends BasePlugin {
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.palette.twigextensions.palette_globals');
+    Craft::import('plugins.palette.twigextensions.Palette_Globals');
     return array(
-      new palette_globals()
+      new Palette_Globals()
     );
   }
 
